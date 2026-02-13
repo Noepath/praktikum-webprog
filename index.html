@@ -6,11 +6,14 @@
     <meta name="description" content="Portfolio website of Farid Syah Fadillah - Web Developer">
     <meta name="author" content="Farid Syah Fadillah">
     <title>Farid Syah Fadillah - Web Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- ========== NAVIGATION ========== -->
-    <header class="header" id="header">
+    <header class="header" id="header" data-animate="fade-down">
         <nav class="nav container">
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -42,11 +45,16 @@
         <section class="home section" id="home">
             <div class="home__container container">
                 <div class="home__content">
-                    <h1 class="home__title">
-                        Hello,<br>
-                        I'm Farid Syah Fadillah
-                    </h1>
-                    <p class="home__description">Web Developer</p>
+                    <div class="home__text">
+                        <h1 class="home__title" data-animate="blur-in">
+                            Hello,<br>
+                            I'm Farid Syah Fadillah
+                        </h1>
+                        <p class="home__description" data-animate="fade-up" data-delay="300">Web Developer</p>
+                    </div>
+                    <div class="home__image" data-animate="scale-up" data-delay="500">
+                        <img src="assets/images/farid.jpeg" alt="Farid Syah Fadillah" class="home__photo">
+                    </div>
                 </div>
             </div>
         </section>
@@ -54,13 +62,107 @@
         <!-- ========== ABOUT ========== -->
         <section class="about section" id="about">
             <div class="about__container container">
-                <h2 class="section__title">About Me</h2>
-                <div class="about__content">
-                    <p class="about__description">
-                        Hello! I'm Farid Syah Fadillah, a passionate web developer with experience 
-                        in creating dynamic and responsive websites. I specialize in HTML, CSS, 
-                        and JavaScript, and I'm always eager to learn new technologies and improve my skills.
-                    </p>
+                <h2 class="section__title" data-animate="fade-up">About Me</h2>
+                <div class="about__content" data-animate="fade-up" data-delay="200">
+
+                    <!-- Professional About Text -->
+                    <div class="about__hero-text">
+                        <p class="about__big-text">
+                            I specialize in building modern, performant
+                            <strong class="about__keyword">web applications</strong>
+                            with clean architecture — while actively honing my expertise in
+                            <strong class="about__keyword about__keyword--alt">data science &amp; ML</strong>
+                            to engineer intelligent, data-driven solutions.
+                        </p>
+                    </div>
+
+                    <!-- Tech Annotations with Spring Arrows -->
+                    <div class="about__annotations" data-animate="fade-up" data-delay="400">
+                        <div class="about__annotation-card">
+                            <span class="about__annotation-label">Web Dev</span>
+                            <svg class="about__spring-arrow" viewBox="0 0 90 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="about__spring-path" d="M4,14 C10,0 16,0 22,14 C28,28 34,28 40,14 C46,0 52,0 58,14 C64,28 70,28 76,14" stroke="#3A3A3A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                                <polygon class="about__spring-head" points="82,14 74,8 74,20" fill="#3A3A3A"/>
+                            </svg>
+                            <div class="about__bubble-group">
+                                <span class="about__bubble" data-animate="scale-up" data-delay="500">
+                                    <img src="assets/icons/Next.js.svg" alt="Next.js" class="about__bubble-icon" title="Next.js">
+                                </span>
+                                <span class="about__bubble" data-animate="scale-up" data-delay="600">
+                                    <img src="assets/icons/TypeScript.svg" alt="TypeScript" class="about__bubble-icon" title="TypeScript">
+                                </span>
+                                <span class="about__bubble" data-animate="scale-up" data-delay="700">
+                                    <img src="assets/icons/MongoDB.svg" alt="MongoDB" class="about__bubble-icon" title="MongoDB">
+                                </span>
+                                <span class="about__bubble" data-animate="scale-up" data-delay="800">
+                                    <img src="assets/icons/JavaScript.svg" alt="JavaScript" class="about__bubble-icon" title="JavaScript">
+                                </span>
+                                <span class="about__bubble" data-animate="scale-up" data-delay="900">
+                                    <img src="assets/icons/Laravel.svg" alt="Laravel" class="about__bubble-icon" title="Laravel">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="about__annotation-card">
+                            <span class="about__annotation-label about__annotation-label--alt">Data &amp; ML</span>
+                            <svg class="about__spring-arrow" viewBox="0 0 90 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="about__spring-path" d="M4,14 C10,0 16,0 22,14 C28,28 34,28 40,14 C46,0 52,0 58,14 C64,28 70,28 76,14" stroke="#3A3A3A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                                <polygon class="about__spring-head" points="82,14 74,8 74,20" fill="#3A3A3A"/>
+                            </svg>
+                            <div class="about__bubble-group">
+                                <span class="about__bubble" data-animate="scale-up" data-delay="600">
+                                    <img src="assets/icons/Python.svg" alt="Python" class="about__bubble-icon" title="Python">
+                                </span>
+                                <span class="about__bubble" data-animate="scale-up" data-delay="700">
+                                    <img src="assets/icons/Streamlit.svg" alt="Streamlit" class="about__bubble-icon" title="Streamlit">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Full Tech Grid Below -->
+                    <div class="about__tech-strip" data-animate="fade-up" data-delay="500">
+                        <div class="about__tech-item">
+                            <img src="assets/icons/Next.js.svg" alt="Next.js" class="about__tech-icon">
+                            <span class="about__tech-name">Next.js</span>
+                        </div>
+                        <div class="about__tech-item">
+                            <img src="assets/icons/TypeScript.svg" alt="TypeScript" class="about__tech-icon">
+                            <span class="about__tech-name">TypeScript</span>
+                        </div>
+                        <div class="about__tech-item">
+                            <img src="assets/icons/MongoDB.svg" alt="MongoDB" class="about__tech-icon">
+                            <span class="about__tech-name">MongoDB</span>
+                        </div>
+                        <div class="about__tech-item">
+                            <img src="assets/icons/Laravel.svg" alt="Laravel" class="about__tech-icon">
+                            <span class="about__tech-name">Laravel</span>
+                        </div>
+                        <div class="about__tech-item">
+                            <img src="assets/icons/JavaScript.svg" alt="JavaScript" class="about__tech-icon">
+                            <span class="about__tech-name">JavaScript</span>
+                        </div>
+                        <div class="about__tech-item">
+                            <img src="assets/icons/Python.svg" alt="Python" class="about__tech-icon">
+                            <span class="about__tech-name">Python</span>
+                        </div>
+                        <div class="about__tech-item">
+                            <img src="assets/icons/Firebase.svg" alt="Firebase" class="about__tech-icon">
+                            <span class="about__tech-name">Firebase</span>
+                        </div>
+                        <div class="about__tech-item">
+                            <img src="assets/icons/MySQL.svg" alt="MySQL" class="about__tech-icon">
+                            <span class="about__tech-name">MySQL</span>
+                        </div>
+                        <div class="about__tech-item">
+                            <img src="assets/icons/Git.svg" alt="Git" class="about__tech-icon">
+                            <span class="about__tech-name">Git</span>
+                        </div>
+                        <div class="about__tech-item">
+                            <img src="assets/icons/Streamlit.svg" alt="Streamlit" class="about__tech-icon">
+                            <span class="about__tech-name">Streamlit</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -68,22 +170,73 @@
         <!-- ========== PROJECT ========== -->
         <section class="project section" id="project">
             <div class="project__container container">
-                <h2 class="section__title">Projects</h2>
+                <h2 class="section__title" data-animate="fade-up">Projects</h2>
                 <div class="project__content">
-                    <article class="project__card">
-                        <h3 class="project__card-title">Project 1: Portfolio Website</h3>
+                    <article class="project__card" data-animate="fade-up" data-delay="100">
+                        <div class="project__card-tags">
+                            <span class="project__tag">Python</span>
+                            <span class="project__tag">Machine Learning</span>
+                        </div>
+                        <h3 class="project__card-title">Diabetes Risk Check App</h3>
                         <p class="project__card-description">
-                            A personal portfolio website showcasing my skills, projects, and contact 
-                            information. Built with HTML, CSS, and JavaScript.
+                            A diabetes risk prediction application using a Random Forest machine learning model. 
+                            Users can input health parameters to check their diabetes risk level.
                         </p>
+                        <a href="https://github.com/Noepath/diabetes-risk-check-app" target="_blank" rel="noopener noreferrer" class="project__link">View on GitHub &rarr;</a>
                     </article>
                     
-                    <article class="project__card">
-                        <h3 class="project__card-title">Project 2: E-commerce Website</h3>
+                    <article class="project__card" data-animate="fade-up" data-delay="200">
+                        <div class="project__card-tags">
+                            <span class="project__tag">C#</span>
+                            <span class="project__tag">Unity</span>
+                        </div>
+                        <h3 class="project__card-title">Cihuy Adventure</h3>
                         <p class="project__card-description">
-                            An e-commerce website for a local business, featuring product listings, 
-                            shopping cart functionality, and a checkout process. Developed using React and Node.js.
+                            A 2D adventure game built with Unity Engine. Features character movement, 
+                            damage system, and multiple game levels. Developed collaboratively with a team of 4.
                         </p>
+                        <a href="https://github.com/CihilsSyndicate/Cihuy-Adventure" target="_blank" rel="noopener noreferrer" class="project__link">View on GitHub &rarr;</a>
+                    </article>
+                    
+                    <article class="project__card" data-animate="fade-up" data-delay="300">
+                        <div class="project__card-tags">
+                            <span class="project__tag">C#</span>
+                            <span class="project__tag">Unity</span>
+                        </div>
+                        <h3 class="project__card-title">Bubble Shoot Battle</h3>
+                        <p class="project__card-description">
+                            A bubble shooting battle game built with Unity Engine, featuring explosion effects 
+                            and bubble mechanics. Developed collaboratively with a team of 3.
+                        </p>
+                        <a href="https://github.com/CihilsSyndicate/Bubble-Shoot-Battle" target="_blank" rel="noopener noreferrer" class="project__link">View on GitHub &rarr;</a>
+                    </article>
+                    
+                    <article class="project__card" data-animate="fade-up" data-delay="400">
+                        <div class="project__card-tags">
+                            <span class="project__tag">PHP</span>
+                            <span class="project__tag">Laravel</span>
+                            <span class="project__tag">JavaScript</span>
+                        </div>
+                        <h3 class="project__card-title">Buku Tamu</h3>
+                        <p class="project__card-description">
+                            A guest book web application built with Laravel framework. Features CRUD operations 
+                            for managing guest entries, with Tailwind CSS for styling and Blade templating.
+                        </p>
+                        <a href="https://github.com/CihilsSyndicate/buku-tamu/" target="_blank" rel="noopener noreferrer" class="project__link">View on GitHub &rarr;</a>
+                    </article>
+                    
+                    <article class="project__card" data-animate="fade-up" data-delay="500">
+                        <div class="project__card-tags">
+                            <span class="project__tag">Python</span>
+                            <span class="project__tag">Jupyter Notebook</span>
+                            <span class="project__tag">Streamlit</span>
+                        </div>
+                        <h3 class="project__card-title">AI Business Impact Predictor</h3>
+                        <p class="project__card-description">
+                            An AI-powered application to predict F&B business success in Bandung using machine learning. 
+                            Features EDA, dataset cleaning, and a Streamlit web app for predictions. Developed with a team of 3.
+                        </p>
+                        <a href="https://github.com/Dho99/ai-business-impact-predictor" target="_blank" rel="noopener noreferrer" class="project__link">View on GitHub &rarr;</a>
                     </article>
                 </div>
             </div>
@@ -92,21 +245,103 @@
         <!-- ========== CERTIFICATE ========== -->
         <section class="certificate section" id="certificate">
             <div class="certificate__container container">
-                <h2 class="section__title">Certificate</h2>
+                <h2 class="section__title" data-animate="fade-up">Certificate</h2>
                 <div class="certificate__content">
-                    <p class="certificate__description">
-                        My certificates and achievements will be displayed here.
-                    </p>
+
+                    <article class="certificate__card" data-img="assets/images/globalgamejam.png">
+                        <div class="certificate__image-wrapper">
+                            <img src="assets/images/globalgamejam.png" alt="Global Game Jam Certificate" class="certificate__image" loading="lazy">
+                            <div class="certificate__overlay">
+                                <span class="certificate__view-icon">&#x1F50D;</span>
+                            </div>
+                        </div>
+                        <div class="certificate__info">
+                            <h3 class="certificate__card-title">Global Game Jam</h3>
+                            <p class="certificate__card-tag">Event Participation</p>
+                        </div>
+                    </article>
+
+                    <article class="certificate__card" data-img="assets/images/Participants_Certificate_Farid%20Syah%20Fadillah_page-0001.jpg">
+                        <div class="certificate__image-wrapper">
+                            <img src="assets/images/Participants_Certificate_Farid%20Syah%20Fadillah_page-0001.jpg" alt="Participants Certificate" class="certificate__image" loading="lazy">
+                            <div class="certificate__overlay">
+                                <span class="certificate__view-icon">&#x1F50D;</span>
+                            </div>
+                        </div>
+                        <div class="certificate__info">
+                            <h3 class="certificate__card-title">Participants Certificate</h3>
+                            <p class="certificate__card-tag">Achievement</p>
+                        </div>
+                    </article>
+
+                    <article class="certificate__card" data-img="assets/images/sertifikat_course_177_2922710_141224204754_page-0001.jpg">
+                        <div class="certificate__image-wrapper">
+                            <img src="assets/images/sertifikat_course_177_2922710_141224204754_page-0001.jpg" alt="Course Certificate" class="certificate__image" loading="lazy">
+                            <div class="certificate__overlay">
+                                <span class="certificate__view-icon">&#x1F50D;</span>
+                            </div>
+                        </div>
+                        <div class="certificate__info">
+                            <h3 class="certificate__card-title">Online Course Certificate</h3>
+                            <p class="certificate__card-tag">Course Completion</p>
+                        </div>
+                    </article>
+
+                    <article class="certificate__card" data-img="assets/images/sertifikat_course_86_2922710_301224160205_page-0001.jpg">
+                        <div class="certificate__image-wrapper">
+                            <img src="assets/images/sertifikat_course_86_2922710_301224160205_page-0001.jpg" alt="Course Certificate" class="certificate__image" loading="lazy">
+                            <div class="certificate__overlay">
+                                <span class="certificate__view-icon">&#x1F50D;</span>
+                            </div>
+                        </div>
+                        <div class="certificate__info">
+                            <h3 class="certificate__card-title">Online Course Certificate</h3>
+                            <p class="certificate__card-tag">Course Completion</p>
+                        </div>
+                    </article>
+
+                    <article class="certificate__card" data-img="assets/images/sertifikat_datathon_ai_workshop.png">
+                        <div class="certificate__image-wrapper">
+                            <img src="assets/images/sertifikat_datathon_ai_workshop.png" alt="Datathon AI Workshop Certificate" class="certificate__image" loading="lazy">
+                            <div class="certificate__overlay">
+                                <span class="certificate__view-icon">&#x1F50D;</span>
+                            </div>
+                        </div>
+                        <div class="certificate__info">
+                            <h3 class="certificate__card-title">Datathon AI Workshop</h3>
+                            <p class="certificate__card-tag">Workshop</p>
+                        </div>
+                    </article>
+
+                    <article class="certificate__card" data-img="assets/images/sertifikat_developer_generetive_ai.jpg">
+                        <div class="certificate__image-wrapper">
+                            <img src="assets/images/sertifikat_developer_generetive_ai.jpg" alt="Developer Generative AI Certificate" class="certificate__image" loading="lazy">
+                            <div class="certificate__overlay">
+                                <span class="certificate__view-icon">&#x1F50D;</span>
+                            </div>
+                        </div>
+                        <div class="certificate__info">
+                            <h3 class="certificate__card-title">Developer Generative AI</h3>
+                            <p class="certificate__card-tag">AI Certification</p>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
 
+        <!-- ========== CERTIFICATE LIGHTBOX ========== -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox__close" id="lightbox-close" aria-label="Close">&times;</button>
+            <img src="" alt="Certificate Preview" class="lightbox__image" id="lightbox-image">
+        </div>
+
         <!-- ========== CONTACT ========== -->
         <section class="contact section" id="contact">
             <div class="contact__container container">
-                <h2 class="section__title">Contact Me</h2>
+                <h2 class="section__title" data-animate="fade-up">Contact Me</h2>
                 <div class="contact__content">
-                    <p class="contact__description">
+                    <p class="contact__description" data-animate="fade-up" data-delay="200">
                         If you'd like to get in touch, feel free to reach out via email at 
                         <a href="mailto:farid@example.com" class="contact__link">farid@example.com</a>.
                     </p>
@@ -116,7 +351,7 @@
     </main>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="footer">
+    <footer class="footer" data-animate="fade-up">
         <div class="footer__container container">
             <p class="footer__copy">
                 &copy; 2026 Farid Syah Fadillah. All rights reserved.
