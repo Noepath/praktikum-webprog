@@ -147,6 +147,36 @@ function setupSmoothScroll() {
   });
 }
 
+/* ========== MOBILE NAV TOGGLE ========== */
+function setupMobileNav() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('.nav__link');
+
+  if (!navToggle || !navMenu) return;
+
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navMenu.classList.toggle('show-menu');
+  });
+
+  // Close menu when a nav link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('show-menu');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('show-menu');
+    }
+  });
+}
+
 /* ========== INITIALIZE ALL FUNCTIONS ========== */
 document.addEventListener('DOMContentLoaded', () => {
   setupScrollAnimations();
@@ -155,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupCertificateCards();
   setupLightbox();
   setupContactForm();
+  setupMobileNav();
   
   // Set initial active link based on current scroll position
   if (window.scrollY < 100) {
