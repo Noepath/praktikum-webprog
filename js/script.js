@@ -154,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSmoothScroll();
   setupCertificateCards();
   setupLightbox();
+  setupContactForm();
   
   // Set initial active link based on current scroll position
   if (window.scrollY < 100) {
@@ -303,5 +304,26 @@ function setupLightbox() {
     if (e.key === 'Escape' && lightbox.classList.contains('active')) {
       closeLightbox();
     }
+  });
+}
+
+/* ========== CONTACT FORM — OPEN GMAIL COMPOSE ========== */
+function setupContactForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const subject = document.getElementById('contact-subject').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+
+    const body = `Hi, my name is ${name} (${email}).\n\n${message}`;
+
+    // Open Gmail compose in a new tab
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=faridsyahfadillah@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(gmailURL, '_blank');
   });
 }
